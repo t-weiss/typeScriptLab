@@ -34,15 +34,15 @@ function calcAverageProductPrice(products) {
 }
 calcAverageProductPrice(products);
 var inventory = [
-    { product: [{ name: "motor", price: 10.0 }], quantity: 10 },
-    { product: [{ name: "sensor", price: 12.5 }], quantity: 4 },
-    { product: [{ name: "LED", price: 1.0 }], quantity: 20 }
+    { product: { name: "motor", price: 10.0 }, quantity: 10 },
+    { product: { name: "sensor", price: 12.5 }, quantity: 4 },
+    { product: { name: "LED", price: 1.0 }, quantity: 20 }
 ];
 function calcInventoryValue(inventory) {
     var totalPrice = 0;
     var itemPrice = 0;
     inventory.forEach(function (item) {
-        itemPrice = item.product[0].price * item.quantity;
+        itemPrice = item.product.price * item.quantity;
         totalPrice += itemPrice;
     });
     console.log(totalPrice);
